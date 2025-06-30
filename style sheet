@@ -1,0 +1,4392 @@
+/* =====================
+    GLOBAL STYLES
+====================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5; /* Light grey background to match screenshot */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; /* Max width for central content */
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* =====================
+    MAIN HEADER
+====================== */
+.site-header {
+    background: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    min-width: 80px;
+}
+
+.search {
+    flex: 1;
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+    max-width: 600px;
+    margin: 0 20px;
+    height: 40px;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search select {
+    width: 120px;
+    border: none;
+    border-left: 1px solid #e0e0e0;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.search button {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search button:hover {
+    background-color: #005bb5;
+}
+
+/* Header Icons */
+.header-icons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icon-block span {
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+.icon-block small {
+    font-size: 12px;
+}
+
+/* =====================
+    CATEGORY NAV BAR
+====================== */
+.category-bar {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.category-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-icon {
+    font-size: 20px;
+    margin-right: 20px;
+    color: #555;
+    cursor: pointer;
+}
+
+.nav-items {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.nav-items li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-items li a:hover {
+    color: #0073e6;
+}
+
+.nav-right {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.lang-select,
+.ship-to {
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+}
+
+.lang-select strong,
+.ship-to strong {
+    font-weight: 600;
+}
+
+.ship-to {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.flag-icon {
+    width: 20px;
+    height: auto;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+/* =====================
+    HERO SECTION (web-main)
+====================== */
+.hero-area {
+    width: 100%;
+    padding: 20px 0; /* Padding for the section, creates space above/below content */
+    background-color: #f0f2f5; /* Background for the entire area */
+}
+
+.hero-wrapper {
+    max-width: 1200px; /* Aligns with .container width */
+    margin: 0 auto; /* Centers the content */
+    background-color: #FFFFFF; /* White background for the main content block */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px; /* Inner padding for the wrapper around flex items */
+}
+
+.hero-section {
+    display: flex; /* Makes category menu, banner, and cards align in a row */
+    gap: 20px; /* Space between the flex items */
+    align-items: flex-start; /* Aligns items to the top of the flex container */
+}
+
+/* Left Category Menu */
+.category-menu {
+    width: 250px; /* Fixed width as per Figma */
+    flex-shrink: 0; /* Prevents shrinking */
+    background-color: #fff; /* Figma shows white background for the whole menu area */
+    border-radius: 8px; /* Should inherit from wrapper, but good to ensure */
+    border: 1px solid #eee; /* Subtle border as seen in Figma */
+    /* Height for category menu and banner appears to be consistent in Figma */
+    min-height: 360px; /* Match the banner height for alignment */
+    box-sizing: border-box; /* Include padding in dimensions */
+    padding: 0; /* Remove padding from here; add to li for precise control */
+}
+
+.category-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 360px; /* Keep max-height to define the visible area */
+    overflow-y: hidden; /* <--- CHANGE THIS LINE */
+    /* If you had any of these commented out, you can remove them now too: */
+    /* -ms-overflow-style: none; */
+    /* scrollbar-width: none; */
+    /* &::-webkit-scrollbar { display: none; } */
+}
+
+.category-menu li {
+    cursor: pointer;
+    padding: 8px 15px; /* Adjust padding to match Figma: vertical 8px, horizontal 15px */
+    border-radius: 4px; /* Slight roundness on active item */
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 14px;
+    margin-bottom: 5px; /* Small gap between list items, as seen in Figma */
+    /* Figma shows first list item with a margin-top to separate from border, 
+       but standard li padding with a border-radius looks clean here. */
+}
+
+.category-menu li:first-child {
+    margin-top: 5px; /* Small top margin for the first item if desired, matches spacing */
+}
+
+.category-menu li:last-child {
+    margin-bottom: 5px; /* Small bottom margin for the last item for consistency */
+}
+
+
+.category-menu li.active {
+    background-color: #e0f0ff; /* Light blue background for active */
+    font-weight: bold; /* Bold text for active */
+    color: #0073e6; /* Blue text for active */
+    /* Ensure the padding applied above is maintained */
+}
+
+/* Hero Banner */
+.hero-banner {
+    flex: 1; /* Takes up remaining space in the flex container */
+    height: 360px; /* Fixed height as per Figma */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    /* The width will be calculated by flexbox based on remaining space */
+}
+
+.banner-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    color: #000;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+}
+
+.banner-content p {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.banner-content h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.banner-content button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #aaa;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.banner-content button:hover {
+    background-color: #f0f0f0;
+    border-color: #888;
+}
+
+/* Right Cards */
+.right-cards {
+    width: 220px; /* Fixed width as per Figma */
+    flex-shrink: 0; /* Prevents shrinking */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Space between the cards */
+    justify-content: flex-start;
+    height: 360px; /* Match height of banner and category menu */
+}
+
+.welcome-card,
+.promo-card,
+.supplier-card {
+    width: 100%;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-card {
+    background-color: #eaf6ff;
+    color: #333;
+}
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.welcome-content .user-icon {
+    font-size: 28px;
+}
+
+.welcome-content p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.welcome-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-primary {
+    padding: 8px 15px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+.btn-outline {
+    padding: 8px 15px;
+    background-color: #f0f2f5;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover {
+    background-color: #e0e2e5;
+    border-color: #bbb;
+    color: #333;
+}
+
+.promo-card.orange {
+    height: 95px;
+    background: linear-gradient(135deg, #FFB74D, #FF9800);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.supplier-card.blue {
+    height: 95px;
+    background-color: #55BDC3;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* =====================
+    DEALS AND OFFERS SECTION
+====================== */
+.deals-offers-section {
+    background-color: #f0f2f5; /* Matches the body background */
+    padding: 20px 0; /* Padding above and below the section */
+}
+
+.deals-offers-grid {
+    display: flex; /* Use flexbox to arrange the left countdown and right product cards */
+    gap: 20px; /* Space between the two main columns */
+    background-color: #fff; /* White background for the entire deals row */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Ensures borders/shadows are contained */
+}
+
+/* Left Column: Deals Countdown Card */
+.deals-countdown-card {
+    width: 250px; /* Fixed width as per Figma for the left section */
+    flex-shrink: 0; /* Prevents it from shrinking */
+    padding: 20px; /* Padding inside the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align text to the start */
+    border-right: 1px solid #eee; /* Separator line as in Figma */
+}
+
+.deals-countdown-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.deals-countdown-card p {
+    font-size: 14px;
+    color: #888; /* Lighter color for description */
+    margin-bottom: 20px;
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 6px; /* Smaller gap between timer blocks */
+}
+
+.timer-block {
+    background-color: #606060; /* Dark grey background for timer blocks */
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 6px; /* Adjusted padding for a tighter look */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* Fixed width for each block */
+    height: 50px; /* Fixed height for each block */
+    font-size: 11px; /* Smaller font for labels */
+}
+
+.timer-block .value {
+    font-size: 18px; /* Larger font for time value */
+    font-weight: bold;
+    line-height: 1; /* Tighter line height */
+}
+
+.timer-block .label {
+    font-size: 9px; /* Even smaller font for labels */
+    text-transform: uppercase;
+    line-height: 1; /* Tighter line height */
+    margin-top: 3px; /* Space between value and label */
+}
+
+
+/* Right Column: Product Cards Container */
+.deals-product-cards {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* This centers items vertically within the flex container */
+    padding: 10px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f1f1f1;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.deals-product-cards::-webkit-scrollbar {
+    height: 8px;
+}
+
+.deals-product-cards::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 10px;
+}
+
+.deals-product-cards::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.deals-product-cards::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* Keep a minimal padding around the content within the card */
+    text-align: center;
+    min-width: 150px;
+    max-width: 180px;
+    position: relative;
+    flex-shrink: 0;
+    /* Increase height to provide more room for product name and discount */
+    height: 190px; /* Adjusted from 180px to 190px to give more vertical space */
+    justify-content: space-between;
+}
+.product-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+
+.product-card .product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-top: 5px; /* Add margin-top to separate from image */
+    margin-bottom: 5px; /* Add margin-bottom to separate from discount */
+    /*
+      Re-evaluate these. While good for overflow, if the card is too narrow
+      or height is limited, this can hide text entirely.
+      Let's ensure sufficient space first.
+      For now, keep them, but if issues persist, we might remove white-space: nowrap
+      to allow wrapping.
+    */
+    white-space: normal; /* <--- IMPORTANT CHANGE: Allow text to wrap */
+    overflow: visible; /* <--- IMPORTANT CHANGE: Allow text to be visible even if it slightly overflows */
+    text-overflow: clip; /* <--- IMPORTANT CHANGE: No ellipsis if visible */
+    max-width: 100%; /* Still respect max width */
+    line-height: 1.2; /* Tweak line height for better spacing */
+}
+
+.product-card .discount {
+    background-color: #FFE3E3;
+    color: #EB5757;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+    /* Remove absolute positioning. We will let it flow naturally in the flex column */
+    /* position: absolute; */
+    /* bottom: 20px; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    margin-top: auto; /* Push discount to the bottom of the available space */
+    white-space: nowrap;
+}
+/* =====================
+    HOME AND OUTDOOR SECTION
+====================== */
+ */
+.home-outdoor-section {
+    background-color: #f0f2f5;
+    padding: 20px 0;
+}
+
+.home-outdoor-grid {
+    display: flex;
+    gap: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    /* --- Adjusted Height for the entire grid --- */
+    height: 257px; /* Set the total height for the grid container */
+}
+/* Left Column: Home and Outdoor Banner */
+.home-outdoor-banner button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    align-self: flex-start; /* Align button to the start */
+    /* Add margin-top to position it relative to the heading */
+    margin-top: 5px; /* Adjust this value to move the button up/down as desired */
+    margin-left: 5px;
+    /* REMOVE margin-bottom if it was here, as it's not needed for vertical positioning with column flex */
+}
+
+
+ .home-outdoor-banner {
+    width: 280px;
+    flex-shrink: 0;
+    background-color: #F3FCF5; /* Fallback color */
+    background-image: url('bgint.png'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    padding: 20px; /* Keep padding for overall spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start content from the top */
+    align-items: flex-start;
+    height: 100%; /* Make banner take 100% of its parent .home-outdoor-grid height */
+}
+
+
+
+.home-outdoor-banner h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    /* REMOVE margin-bottom: auto; from here */
+    margin-bottom: 20px; /* Add a fixed margin-bottom to separate from button or other elements */
+    line-height: 1.2;
+    padding-top: 10px; /* Small padding from the top */
+    padding-left: 5px;
+}
+
+/* ... (rest of your CSS) ... */
+
+.home-outdoor-banner button:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+
+/* Right Grid: Product Categories */
+.home-outdoor-products {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1px;
+    background-color: #eee;
+    border-radius: 8px;
+    /* --- Adjust product grid height to fill the grid height --- */
+    height: 100%; /* Make product grid take 100% of its parent .home-outdoor-grid height */
+}
+.category-item {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 0;
+    /* No need for fixed height here, it's handled by grid-template-rows */
+    width: 100%;
+}
+
+
+.category-item .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    margin-right: 10px;
+}
+.category-item .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+
+
+.category-item .price {
+    font-size: 13px;
+    color: #888;
+}
+.category-item .price .usd {
+    font-weight: 500;
+    font-size: 13px;
+    color: #888; /* Make "USD 19" bolder/darker */
+}
+
+.category-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+/* =====================
+    CONSUMER ELECTRONICS SECTION
+====================== */
+.consumer-electronics-section {
+    background-color: #f0f2f5; /* Matches body background */
+    padding: 20px 0; /* Padding above and below the section */
+}
+
+.consumer-electronics-grid {
+    display: flex; /* Flexbox to arrange the left banner and right grid */
+    gap: 20px; /* Space between the two main columns */
+    background-color: #fff; /* White background for the entire section */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Ensures borders/shadows are contained */
+    height: 257px; /* Fixed height to match the Figma design for this section */
+}
+
+/* Left Column: Consumer Electronics Banner */
+.consumer-electronics-banner {
+    width: 280px; /* Fixed width for the banner as per Figma */
+    flex-shrink: 0; /* Prevent it from shrinking */
+    background-color: #D3E7F8; /* Light blue background as in Figma */
+    /* Background image for this section - you'll need to create/find this image */
+   background-image: url('consumerbg.png');
+    background-size: cover;
+    background-position: center center; /* Adjust as needed for your specific image */
+    background-repeat: no-repeat;
+    border-radius: 8px; /* Match container border-radius */
+    padding: 20px; /* Padding inside the banner */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start;
+    height: 100%; /* Make banner take 100% of its parent grid height */
+}
+
+.consumer-electronics-banner h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: auto; /* Pushes the button to the bottom */
+    line-height: 1.2;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.consumer-electronics-banner button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    align-self: flex-start; /* Align button to the start */
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.consumer-electronics-banner button:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+
+/* Right Grid: Product Categories (reusing category-item styles) */
+.consumer-electronics-products {
+    flex: 1; /* Takes up remaining space */
+    display: grid; /* Use CSS Grid for the 2x4 layout */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns, equal width */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows, equal height */
+    gap: 1px; /* Very thin gap between grid items, creating the dividers */
+    background-color: #eee; /* Light grey background to show the 1px gaps */
+    height: 100%; /* Make product grid take 100% of its parent grid height */
+}
+
+/* Reusing .category-item styles for consistency */
+/* The .category-item and its children styles remain the same as defined for 'Home and outdoor' */
+/* If you have these already, you don't need to duplicate them: */
+/*
+.category-item {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 0;
+    width: 100%;
+}
+
+.category-item .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.category-item .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.category-item .price {
+    font-size: 13px;
+    color: #888;
+}
+
+.category-item .price .usd {
+    font-weight: bold;
+    color: #333;
+}
+
+.category-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+*/
+/* =====================
+    SEND REQUESTS TO SUPPLIERS SECTION
+====================== */
+.supplier-request-section {
+    background-color: #f0f2f5; /* Matches body background */
+    padding: 20px 0; /* Padding above and below the section */
+}
+
+.supplier-request-content {
+    display: flex; /* Arranges left text and right form side-by-side */
+    gap: 30px; /* Space between the text block and the form */
+    background-color: #EBF3FF; /* Light blue background as seen in Figma/image */
+    background-image: url('buildbackground.png'); /* <--- Your background image path */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    border: 1px solid #ddd; /* Border as per layout */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    height: 420px; /* <--- Fixed height as per your request */
+    align-items: center; /* Vertically center content */
+    padding: 40px; /* Inner padding for the entire content area */
+}
+
+/* Left Column: Text Content */
+.request-text-block {
+    flex: 1; /* Allows text block to take available space */
+    color: #fff; /* White text for contrast against blue background */
+    max-width: 50%; /* Limit width to ensure form has space */
+}
+
+.request-text-block h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Subtle shadow for readability */
+}
+
+.request-text-block p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Right Column: Inquiry Form Card */
+.inquiry-form-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px 30px; /* Padding inside the form card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Set the width of the form card based on the Figma's form width (491px) */
+    width: 491px; /* <--- Adjusted width of the ENTIRE FORM CARD */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.inquiry-form-card h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: #0073e6;
+}
+
+.form-group textarea {
+    min-height: 80px; /* Allow textarea to expand */
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.form-row {
+    display: flex;
+    gap: 10px; /* Space between quantity and unit fields */
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    margin-bottom: 0; /* Remove bottom margin from form-groups within this row */
+}
+
+.quantity-input {
+    flex: 1; /* Allow quantity input to take available space */
+}
+
+.quantity-input input[type="number"] {
+    width: 100%; /* Ensure input fills its flex item */
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+}
+
+.unit-select {
+    width: 100px; /* Fixed width for the dropdown */
+    flex-shrink: 0;
+}
+
+.unit-select select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2C197.3L159.2%2C69.5c-3.6-3.6-8.2-5.4-12.9-5.4s-9.3%2C1.8-12.9%2C5.4L5.4%2C197.3c-7.2%2C7.2-7.2%2C18.8%2C0%2C26.1c7.2%2C7.2%2C18.8%2C7.2%2C26.1%2C0L146.4%2C101c1.8-1.8%2C4-2.7%2C6.5-2.7c2.5%2C0%2C4.7%2C0.9%2C6.5%2C2.7l114.9%2C114.9c7.2%2C7.2%2C18.8%2C7.2%2C26.1%2C0C294.2%2C216.1%2C294.2%2C204.5%2C287%2C197.3z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px; /* Space for the custom arrow */
+}
+
+
+.btn-send-inquiry {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 12px 25px; /* Standard vertical padding for button height */
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%; /* <--- Make button fill the width of its parent card */
+    /* Remove any fixed height here to prevent elongation. Default button height is fine. */
+    height: auto; /* Ensure height is determined by padding and content */
+    margin-top: 10px;
+}
+
+.btn-send-inquiry:hover {
+    background-color: #005bb5;
+}
+/* =====================
+    RECOMMENDED ITEMS SECTION
+====================== */
+.recommended-items-section {
+    background-color: #f0f2f5; /* Matches body background */
+    padding: 20px 0 40px 0; /* Padding above and below the section, slightly more at bottom */
+}
+
+.recommended-items-section .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px; /* Space below the title */
+    text-align: center; /* Center the title */
+}
+
+.recommended-items-grid {
+    display: grid; /* Use CSS Grid for the 2x5 layout */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns, equal width */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows, equal height */
+    gap: 20px; /* Space between product cards */
+    /* The overall width (1180px) is handled by the .container and grid layout */
+    /* Height will be determined by content and row heights, ensuring responsiveness */
+    /* If you MUST have an exact height for the entire grid, uncomment this: */
+    /* height: 620px; */ /* (approx. 2 * 310px + gap) */
+}
+
+.recommended-item-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0; /* Subtle border for each card */
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px; /* Padding inside each card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* Ensure content doesn't break out */
+    height: 310px; /* <--- Fixed height for single product card as requested */
+    width: 100%; /* Will take up full grid column width */
+}
+
+.recommended-item-card .image-wrapper {
+    width: 100%;
+    height: 180px; /* Fixed height for the image area, ensures consistent spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden; /* Hide parts of image if it's too large for wrapper */
+}
+
+.recommended-item-card img {
+    max-width: 100%;
+    max-height: 100%; /* Ensure image fits within its wrapper */
+    object-fit: contain; /* Prevents image distortion */
+}
+
+.recommended-item-card .product-info {
+    flex: 1; /* Allows info block to take remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes price to top, description to bottom */
+    width: 100%;
+    padding: 0 5px; /* Small horizontal padding for text */
+}
+
+.recommended-item-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px; /* Space between price and description */
+}
+
+.recommended-item-card .description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    /* Limit lines for description if needed to prevent overflow */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show maximum of 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: auto; /* Pushes description to the bottom of the info box */
+}
+/* =====================
+    OUR EXTRA SERVICES SECTION
+====================== */
+.extra-services-section {
+    background-color: #f0f2f5; /* Matches body background */
+    padding: 20px 0 40px 0; /* Padding above and below the section */
+}
+
+.extra-services-section .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px; /* Space below the title */
+    text-align: center; /* Center the title */
+}
+
+.services-grid {
+    display: grid; /* Use CSS Grid for the 4-column layout */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns, equal width */
+    gap: 20px; /* Space between service cards */
+    /* Height will be determined by content and card height */
+    /* If you MUST have an exact height for the entire grid, uncomment this: */
+    /* height: 256px; */ /* (approx. individual card height + title height + spacing) */
+}
+
+.service-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Ensures content within is contained */
+    text-align: center;
+    height: 200px; /* <--- Fixed height for individual card as requested */
+    width: 100%; /* Will take up full grid column width (approx. 280px due to 1180px container) */
+}
+
+.service-card .service-image-wrapper {
+    position: relative; /* Needed for positioning the icon */
+    width: 100%;
+    height: 140px; /* Height for the image part of the card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This helps prevent blurriness from stretching low-res images */
+    display: block;
+}
+.service-card .service-icon {
+    position: absolute; /* Position icon over the image */
+    bottom: -25px; /* Start slightly below the image to animate up */
+    right: 15px; /* Position to the right */
+    background-color: #E3F0FF; /* Light blue background for icon circle */
+    color: #338EFF; /* Blue icon color */
+    width: 50px; /* Size of the icon circle */
+    height: 50px;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the icon */
+.service-card:hover .service-icon {
+    bottom: 15px; /* Move icon up on hover */
+    background-color: #338EFF; /* Change background on hover */
+    color: #fff; /* Change icon color on hover */
+}
+
+
+.service-card .service-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    padding: 15px 10px; /* Padding for the title text */
+    flex: 1; /* Allow title to take remaining vertical space */
+    display: flex; /* Use flex to vertically align if needed */
+    align-items: center; /* Vertically center the title within its space */
+    justify-content: center; /* Horizontally center the title */
+}
+/* =====================
+    SUPPLIERS BY REGION SECTION
+====================== */
+.suppliers-by-region-section {
+    background-color: #f0f2f5; /* Background color for the section */
+    padding: 20px 0 40px 0; /* Padding around the section content */
+}
+
+/* Title styling for the section */
+.suppliers-by-region-section .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px; /* Space below the title */
+    text-align: left; /* Align title to the left as per Figma */
+}
+
+/* Grid container for the region items */
+.region-grid {
+    display: grid; /* Enables CSS Grid layout */
+    grid-template-columns: repeat(5, 1fr); /* Creates 5 columns, each taking equal available width */
+    gap: 15px 0px; /* Vertical gap of 15px between rows, no horizontal gap (padding will manage this) */
+    /*
+    Optional: If you need an exact fixed height for the entire grid, uncomment and adjust:
+    height: 138px;
+    However, it's generally better to let content determine height for responsiveness.
+    */
+}
+
+/* Individual region item card (e.g., "Arabic Emirates") */
+.region-item {
+    display: flex; /* Uses Flexbox to align flag and text horizontally */
+    align-items: center; /* Vertically centers the flag and text within the item */
+    padding: 10px 0; /* Vertical padding 10px, no horizontal padding (gap handles horizontal space) */
+}
+
+/* Flag image styling */
+.region-item img {
+    width: 30px; /* Fixed width for flag image */
+    height: 20px; /* Fixed height for flag image */
+    object-fit: cover; /* Ensures image covers the area, potentially cropping */
+    border: 1px solid #ddd; /* Subtle border around flags */
+    border-radius: 3px; /* Slightly rounded corners for flags */
+    margin-right: 10px; /* Space between flag and region info */
+    flex-shrink: 0; /* Prevents flag from shrinking if space is limited */
+}
+
+/* Container for region name and shop name */
+.region-item .region-info {
+    display: flex; /* Uses Flexbox for vertical stacking of name and shop */
+    flex-direction: column; /* Stacks name and shop vertically */
+    text-align: left; /* Aligns text to the left within this info block */
+}
+
+/* Region name (e.g., "Arabic Emirates") styling */
+.region-item .region-name {
+    font-size: 16px;
+    font-weight: bold; /* Makes the region name text bold */
+    color: #333; /* Dark gray text color */
+    margin-bottom: 2px; /* Small space between region name and shop name */
+}
+
+/* Shop name (e.g., "shopname.ae") styling */
+.region-item .shop-name {
+    font-size: 13px;
+    color: #888; /* Lighter gray text color for shop name */
+}
+/* =====================
+    HEADER SECTION
+====================== */
+.main-header {
+    background-color: #fff; /* White background for the header */
+    border-bottom: 1px solid #e0e0e0; /* Separator line below the header */
+    padding: 10px 0; /* Vertical padding for the header content */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    height: 70px; /* Adjust height for the top header row */
+    display: flex;
+    align-items: center; /* Vertically center content */
+}
+
+.header-container {
+    display: flex; /* Arranges brand, search, user actions horizontally */
+    justify-content: space-between; /* Distributes items to ends with space in between */
+    align-items: center; /* Vertically aligns items */
+    max-width: 1200px; /* Matches your general container width */
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Ensure it spans available width */
+    padding: 0 20px; /* Horizontal padding for the container */
+    min-height: 50px; /* Minimum height for the header row */
+}
+
+/* Brand Logo */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    flex-shrink: 0; /* Prevent from shrinking */
+}
+
+.brand-logo i {
+    margin-right: 8px;
+    color: #0073e6; /* Blue color for the icon */
+}
+
+/* Search Bar Container - This holds the search input group */
+.search-bar-container {
+    flex-grow: 1; /* Allows search bar to take up available space */
+    display: flex;
+    justify-content: center; /* Center the search input group */
+}
+
+/* Search Input Group - This is the component with width 617px */
+.search-input-group {
+    display: flex;
+    border: 1px solid #0073e6; /* Blue border as seen in Figma */
+    border-radius: 6px;
+    overflow: hidden; /* Ensures borders are rounded correctly */
+    width: 617px; /* <--- Fixed width as per your request */
+    height: 40px; /* A reasonable height for the search bar inputs */
+    align-items: center; /* Vertically align items inside */
+}
+
+.search-input-group .search-input {
+    flex-grow: 1; /* Input takes up most space */
+    border: none;
+    padding: 8px 15px;
+    font-size: 15px;
+    outline: none;
+    color: #333;
+}
+
+.search-input-group .search-input::placeholder {
+    color: #888;
+}
+
+.search-input-group .search-category-select {
+    border: none;
+    border-left: 1px solid #e0e0e0; /* Separator for dropdown */
+    padding: 8px 15px;
+    font-size: 15px;
+    color: #555;
+    background-color: #f8f8f8; /* Light background for select */
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none; /* Remove default arrow for custom styling */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2C197.3L159.2%2C69.5c-3.6-3.6-8.2-5.4-12.9-5.4s-9.3%2C1.8-12.9%2C5.4L5.4%2C197.3c-7.2%2C7.2-7.2%2C18.8%2C0%2C26.1c7.2%2C7.2%2C18.8%2C7.2%2C26.1%2C0L146.4%2C101c1.8-1.8%2C4-2.7%2C6.5-2.7c2.5%2C0%2C4.7%2C0.9%2C6.5%2C2.7l114.9%2C114.9c7.2%2C7.2%2C18.8%2C7.2%2C26.1%2C0C294.2%2C216.1%2C294.2%2C204.5%2C287%2C197.3z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow for dropdown */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    padding-right: 30px; /* Space for the custom arrow */
+}
+
+.search-input-group .search-button {
+    background-color: #0073e6; /* Blue button as seen in Figma */
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.search-input-group .search-button:hover {
+    background-color: #005bb5;
+}
+
+/* User Actions (Profile, Message, Orders, My cart) */
+.user-actions {
+    display: flex;
+    gap: 20px; /* Space between action items */
+    flex-shrink: 0; /* Prevent from shrinking */
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+}
+
+.action-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.action-item:hover {
+    color: #0073e6;
+}
+.action-item:hover i {
+    color: #0073e6;
+}
+
+/* =====================
+    SECONDARY NAVIGATION BAR
+====================== */
+.secondary-nav {
+    background-color: #f7f7f7; /* Light background for this nav row */
+    padding: 10px 0; /* Adjust vertical padding to achieve desired height */
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%; /* Ensures it spans the full viewport width (1440px or more) */
+    height: 56px; /* Explicit height as per your request */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: flex; /* Use flex to vertically center content if needed */
+    align-items: center; /* Vertically center content */
+}
+
+.secondary-nav-container {
+    display: flex;
+    justify-content: space-between; /* Distributes links to ends with space in between */
+    align-items: center; /* Vertically aligns items within the container */
+    max-width: 1200px; /* Adjust this if your design requires content to span 1440px inside */
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Ensures container spans its max-width */
+    padding: 0 20px; /* Horizontal padding for the container content */
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px; /* Space between navigation links */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center; /* Vertically align text and icons */
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #0073e6; /* Hover effect color */
+}
+
+.nav-link i {
+    margin-right: 6px; /* Space between icon and text */
+    font-size: 14px;
+    color: #666; /* Icon color */
+}
+
+.nav-link .fas.fa-chevron-down {
+    margin-left: 5px; /* Space before dropdown arrow */
+    margin-right: 0;
+    font-size: 10px; /* Smaller size for dropdown arrow */
+}
+
+/* =====================
+    SECONDARY NAVIGATION BAR
+====================== */
+
+
+.locale-options {
+    display: flex;
+    gap: 20px;
+}
+
+.flag-icon {
+    width: 22px; /* Updated width as per your request */
+    height: 16px; /* Updated height as per your request */
+    border: 1px solid #ddd;
+    margin-left: 5px;
+    object-fit: cover;
+}
+/* =====================
+    SUBSCRIBE ON OUR NEWSLETTER SECTION
+====================== */
+.newsletter-section {
+    background-color: #f0f2f5; /* Light background as seen in Figma */
+    padding: 40px 0; /* Vertical padding around the section */
+    text-align: center; /* Center align all block-level content (title, description) */
+}
+
+.newsletter-container {
+    max-width: 1200px; /* Adjust based on your global container width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.newsletter-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Space below title */
+}
+
+.newsletter-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px; /* Space below description */
+    line-height: 1.5;
+}
+
+.subscribe-form-wrapper {
+    display: flex; /* Use flexbox to center the input group */
+    justify-content: center; /* Horizontally center the input group */
+    width: 100%; /* Take full width of parent to allow centering */
+    /* The height of 113px from your notes likely applies to the vertical spacing/section height,
+       not directly to this wrapper. The padding on the section handles it. */
+}
+
+.subscribe-input-group {
+    display: flex; /* Arranges icon, input, and button horizontally */
+    align-items: center; /* Vertically centers items within the group */
+    width: 617px; /* Explicit width as per your request */
+    height: 50px; /* A reasonable height for the input field and button */
+    border: 1px solid #ccc; /* Subtle border for the input group */
+    border-radius: 6px;
+    overflow: hidden; /* Ensures contents respect border-radius */
+    background-color: #fff; /* White background for the input group */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+.subscribe-input-group .email-icon {
+    font-size: 18px;
+    color: #888;
+    margin-left: 15px; /* Space from the left edge */
+    margin-right: 10px; /* Space before the input field */
+}
+
+.subscribe-input-group .email-input {
+    flex-grow: 1; /* Input takes up most of the available space */
+    border: none;
+    padding: 10px 0; /* Adjusted padding as icon is already present */
+    font-size: 16px;
+    outline: none; /* Remove default focus outline */
+    color: #333;
+}
+
+.subscribe-input-group .email-input::placeholder {
+    color: #aaa;
+}
+
+.subscribe-input-group .subscribe-button {
+    background-color: #0073e6; /* Blue button color as seen in Figma */
+    color: #fff;
+    border: none;
+    padding: 10px 25px; /* Padding for the button */
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    height: 100%; /* Make button fill the height of the group */
+}
+
+.subscribe-input-group .subscribe-button:hover {
+    background-color: #005bb5;
+}
+/* =====================
+    FOOTER SECTION
+====================== */
+.main-footer {
+    background-color: #fff; /* White background for the footer */
+    width: 100%; /* Full width */
+    min-height: 324px; /* Minimum height as per layout, will expand if content needs more */
+    padding-top: 40px; /* Padding for the top section of the footer */
+    border-top: 1px solid #e0e0e0; /* Top border for separation */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.footer-top {
+    display: flex; /* Arranges footer columns horizontally */
+    justify-content: space-between; /* Distributes columns with space between them */
+    align-items: flex-start; /* Aligns columns to the top */
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    padding-bottom: 30px; /* Padding below the top footer section */
+}
+
+.footer-col {
+    margin-bottom: 20px; /* Space between columns when they wrap */
+    flex: 1; /* Allow columns to grow/shrink */
+    min-width: 150px; /* Minimum width for columns before wrapping */
+    padding-right: 20px; /* Space between columns */
+}
+
+.footer-col:last-child {
+    padding-right: 0; /* No right padding on the last column */
+}
+
+/* Brand Info Column */
+.brand-info {
+    flex: 1.5; /* Give brand info column more space */
+    max-width: 280px; /* Max width for brand info column */
+}
+
+.main-footer .brand-logo { /* Specificity for footer brand logo */
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.main-footer .brand-logo i {
+    margin-right: 8px;
+    color: #0073e6;
+}
+
+.brand-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Light grey background for icons */
+    color: #666;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-icon:hover {
+    background-color: #0073e6;
+    color: #fff;
+}
+
+/* Footer Headings */
+.footer-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #0073e6;
+}
+
+/* Get App Section */
+.get-app .app-store-link,
+.get-app .google-play-link {
+    display: block; /* Make links block level so they stack */
+    margin-bottom: 10px; /* Space between app store links */
+}
+
+.get-app img {
+    max-width: 120px; /* Adjust based on your actual image size */
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+
+/* Footer Bottom (Copyright and Language Selector) */
+.footer-bottom {
+    background-color: #f7f7f7; /* Slightly darker background for bottom footer */
+    border-top: 1px solid #e0e0e0;
+    padding: 15px 0; /* Vertical padding */
+    width: 100%;
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: space-between; /* Copyright on left, locale on right */
+    align-items: center;
+}
+
+.footer-bottom-container p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.locale-selector {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+.locale-selector .flag-icon { /* Specificity for footer flag */
+    width: 20px; /* Slightly smaller flag here if desired */
+    height: 14px;
+    border: 1px solid #ddd;
+    margin-right: 8px;
+}
+
+.locale-selector i {
+    margin-left: 5px;
+    font-size: 10px;
+}
+/* =====================
+    BREADCRUMB NAVIGATION
+====================== */
+.breadcrumb-nav {
+    background-color: #f7f7f7; /* Light background as seen in Figma */
+    width: 100%; /* Spans full width (1440px or more) */
+    height: 64px; /* Fixed height as per your request */
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Vertically center content */
+    border-bottom: 1px solid #e0e0e0; /* Subtle bottom border */
+    box-sizing: border-box; /* Include padding and border in height */
+}
+
+.breadcrumb-container {
+    max-width: 1200px; /* Aligns with your main content width */
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.breadcrumb-list {
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange list items horizontally */
+    align-items: center;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #666;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.breadcrumb-item a:hover {
+    color: #0073e6;
+}
+
+.breadcrumb-item .current-page {
+    color: #333; /* Darker color for the current page */
+    font-weight: 150;
+    font-size: 15px;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.breadcrumb-item i.fa-chevron-right {
+    font-size: 10px; /* Smaller size for the separator icon */
+    color: #999;
+    margin: 0 8px; /* Space around the chevron */
+}
+/* =====================
+ /* =====================
+   PAGE CONTENT LAYOUT (Sidebar + Main Content)
+====================== */
+.page-content {
+    background-color: #fcfcfc;
+    padding: 30px 0;
+}
+
+.content-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* =====================
+    LEFT FILTER SIDEBAR
+====================== */
+.filter-sidebar {
+    width: 240px;
+    min-height: 500px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+}
+
+.filter-group {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-heading i {
+    font-size: 12px;
+    color: #999;
+}
+
+.filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-list li {
+    margin-bottom: 10px;
+}
+
+.filter-list li:last-child {
+    margin-bottom: 0;
+}
+
+.filter-list a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.filter-list a:hover {
+    color: #0073e6;
+}
+
+.filter-list .see-all {
+    color: #0073e6;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Checkbox and Radio Button Styling */
+.checkbox-list li,
+.radio-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.checkbox-list input[type="checkbox"],
+.radio-list input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.radio-list input[type="radio"] {
+    border-radius: 50%;
+}
+
+.checkbox-list input[type="checkbox"]:checked {
+    background-color: #0073e6;
+    border-color: #0073e6;
+}
+
+.radio-list input[type="radio"]:checked {
+    background-color: #0073e6;
+    border-color: #0073e6;
+}
+
+.checkbox-list input[type="checkbox"]:checked::before {
+    content: '\2713';
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-list input[type="radio"]:checked::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-list label,
+.radio-list label {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+/* Price Range Slider */
+.price-slider-track {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+
+/* Slider Track */
+.range-slider {
+  width: 100%;
+  appearance: none;
+  height: 4px;
+  background: #d0d7e2;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+.range-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border: 2px solid #127FFF;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+.range-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border: 2px solid #127FFF;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.price-inputs-new {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.input-group input {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size:7px;
+}
+
+.apply-button {
+    margin-top: 12px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #127FFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.apply-button:hover {
+    color: #005bb5;
+}
+
+/* =====================
+    MAIN CONTENT AREA ELEMENTS (right side of layout) - NEW
+====================== */
+.main-content-area {
+    /* This div holds the product control bar and the product listings */
+    /* It takes the remaining space due to grid-template-columns: 240px 1fr; */
+}
+
+/* Product Filtering and Sorting Bar */
+.product-control-bar {
+    background-color: #fff;
+    width: 100%; /* Will take up the 1fr space of its parent (.main-content-area) */
+    height: 62px; /* Fixed height as per request */
+    border: 1px solid #e0e0e0; /* 1px border as requested */
+    border-radius: 6px;
+    padding: 0 20px; /* Horizontal padding inside the bar */
+    margin-bottom: 20px; /* Space between this bar and product listings */
+    box-sizing: border-box; /* Include padding and border in height/width */
+    
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-between; /* Distribute items to the ends */
+    align-items: center; /* Vertically center items */
+}
+
+.item-count {
+    font-size: 15px;
+    color: #666;
+    margin: 0; /* Remove default paragraph margin */
+}
+
+.item-count span {
+    font-weight: 500;
+    color: #333;
+}
+
+.filters-sort-views {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between filter elements */
+}
+
+/* Verified Only Checkbox */
+.verified-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #555;
+    cursor: pointer;
+}
+
+.verified-checkbox input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px; /* Space between checkbox and text */
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.verified-checkbox input[type="checkbox"]:checked {
+    background-color: #0073e6;
+    border-color: #0073e6;
+}
+
+.verified-checkbox input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Checkmark character */
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Sort Dropdown */
+.dropdown-sort {
+    position: relative;
+}
+
+.sort-select {
+    padding: 8px 30px 8px 12px; /* Padding for text and space for custom arrow */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 15px;
+    color: #555;
+    -webkit-appearance: none; /* Remove default browser arrow */
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23666%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E'); /* Custom SVG arrow */
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 18px;
+    outline: none;
+}
+
+.sort-select:focus {
+    border-color: #0073e6;
+}
+
+/* View Toggle Buttons (Grid/List) */
+.view-toggle {
+    display: flex;
+    border: 1px solid #e0e0e0; /* Border around the group of buttons */
+    border-radius: 6px;
+    overflow: hidden; /* Ensures inner buttons stay within rounded corners */
+}
+
+.view-button {
+    background-color: #fff;
+    border: none; /* Remove individual button borders */
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.view-button:first-child {
+    border-right: 1px solid #e0e0e0; /* Separator between buttons */
+}
+
+.view-button.active {
+    background-color: #e0e0e0; /* Background for active view button */
+    color: #333;
+}
+
+.view-button:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+/* =====================
+    PRODUCT LISTING (List View) - For a 920px width area
+====================== */
+.product-listing-grid {
+    display: grid;
+    /* This creates a single-column layout, which matches image_af39a9.png and image_a46721.png */
+    grid-template-columns: 1fr; /* One column, taking the full available width */
+    gap: 20px; /* Space between individual product cards */
+    width: 100%; /* Ensures it takes the full width of its parent (.main-content-area, which is 920px wide) */
+    padding-top: 20px; /* Provides space between the control bar and the first product card */
+    box-sizing: border-box; /* Includes padding and border in the element's total width/height */
+}
+
+/* Styles for individual product cards in the list view */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 20px; /* Internal padding around content within the card */
+    display: flex; /* Arranges image and details side-by-side */
+    align-items: flex-start; /* Aligns content to the top within the card */
+    gap: 20px; /* Space between the image and the product details text */
+    overflow: hidden; /* Ensures elements stay within the card's bounds */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03); /* Subtle shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+    height: auto; /* Allows the card's height to adjust based on its content */
+    box-sizing: border-box; /* Crucial for consistent sizing */
+}
+
+.product-card:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* More pronounced shadow on hover */
+}
+
+.product-image-container {
+    width: 150px; /* Fixed width for the image area */
+    height: 150px; /* Fixed height for the image area */
+    flex-shrink: 0; /* Prevents the image container from shrinking */
+    position: relative; /* Needed for positioning the wishlist button */
+    border-radius: 4px;
+    overflow: hidden; /* Clips image if it overflows its container */
+    background-color: #f8f8f8; /* Light background for images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    max-width: 100%; /* Ensures image doesn't overflow its container */
+    max-height: 100%;
+    object-fit: contain; /* Scales the image down to fit without cropping */
+}
+
+.add-to-wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.add-to-wishlist:hover {
+    background-color: #0073e6;
+    color: #fff;
+}
+
+.product-details {
+    flex-grow: 1; /* Allows the details section to take up the remaining space */
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.price-info {
+    margin-bottom: 8px;
+}
+
+.current-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+
+.old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through; /* Strikethrough for old price */
+}
+
+.rating-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap; /* Allows rating elements to wrap if space is limited */
+}
+
+.rating-info .stars {
+    color: #ffc107; /* Golden color for stars */
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.rating-value {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.rating-info .separator {
+    color: #ccc;
+    margin: 0 8px;
+    font-size: 12px;
+}
+
+.orders-count,
+.shipping-status {
+    font-size: 14px;
+    color: #666;
+}
+
+.shipping-status {
+    color: #00b517; /* Green for free shipping text */
+    font-weight: 500;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 12px;
+    /* Limit description to 3 lines, common for product cards */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* For WebKit browsers */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.view-details-link {
+    display: inline-block;
+    font-size: 15px;
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.view-details-link:hover {
+    color: #005bb5;
+    text-decoration: underline;
+}
+/* =====================
+    FILTER TAGS SECTION - from image_b09e44.png
+====================== */
+
+.selected-filters {
+    display: flex;
+    flex-wrap: wrap; /* Allows tags to wrap to the next line if space is limited */
+    align-items: center; /* Vertically aligns tags and the "Clear all" link */
+    gap: 8px; /* Space between filter tags */
+    background-color: #fff; /* Assuming a white background as per image */
+    padding: 10px 15px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensures padding/border are included in width/height */
+
+    /* Specific dimensions and border as requested */
+    width: 728px;
+    height: 32px; /* Fixed height for the container, might need adjustment if content wraps */
+    border: 1px solid #e0e0e0; /* 1px border */
+    border-radius: 5px; /* 5px border-radius */
+
+    /* Positioning as requested (Be cautious with absolute positioning in a fluid layout) */
+    /* This positioning assumes .content-layout or a similar parent is positioned relative */
+    /* If you want it to flow naturally in the document, remove these top/left/position properties */
+    /* and rely on flex/grid layout of its parent. */
+    /*
+    position: absolute;
+    top: 288px;
+    left: 386px;
+    */
+    /* A more common approach is to let it flow naturally, e.g.: */
+    margin-top: 20px; /* Space below product-control-bar */
+    margin-left: 0; /* Align with product listing if sidebar is on left */
+    margin-right: auto; /* Push it to the left if within a flex/grid container */
+}
+
+.filter-tag {
+    display: flex;
+    align-items: center;
+    background-color: #e3f2fd; /* Light blue background for tags */
+    border: 1px solid #90caf9; /* Blue border for tags */
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #3f51b5; /* Darker blue text for tags */
+    gap: 5px; /* Space between text and close icon */
+    white-space: nowrap; /* Prevents text from wrapping within a tag */
+}
+
+.filter-tag span {
+    font-weight: 500; /* Medium font weight for the tag text */
+}
+
+.remove-filter {
+    background: none;
+    border: none;
+    color: #3f51b5; /* Darker blue for the close icon */
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1; /* Ensures icon is vertically centered */
+    display: flex; /* Helps center the icon */
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-filter:hover {
+    color: #1a237e; /* Even darker blue on hover */
+}
+
+.clear-all-filters {
+    font-size: 14px;
+    color: #0073e6; /* Blue color for the link */
+    text-decoration: none;
+    margin-left: 10px; /* Space between last tag and "Clear all" link */
+    font-weight: 500;
+}
+
+.clear-all-filters:hover {
+    text-decoration: underline;
+    color: #005bb5;
+}
+
+/* Adjustments for responsive design */
+@media (max-width: 960px) { /* Match the breakpoint of product card */
+    .selected-filters {
+        width: 100%; /* Take full width within its parent */
+        left: auto; /* Reset absolute left */
+        top: auto; /* Reset absolute top */
+        position: static; /* Let it flow naturally */
+        height: auto; /* Allow height to adjust based on content wrapping */
+        min-height: 32px; /* Ensure minimum height */
+        justify-content: center; /* Center tags if they wrap */
+    }
+}
+
+@media (max-width: 576px) {
+    .selected-filters {
+        padding: 8px 10px;
+        font-size: 13px;
+        gap: 6px;
+    }
+    .filter-tag {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+    .remove-filter {
+        font-size: 10px;
+    }
+    .clear-all-filters {
+        font-size: 13px;
+        margin-left: 5px;
+    }
+}
+.my-cart-display {
+    /* Layout Properties */
+    width: 127px;
+    height: 32px;
+    position: absolute; /* Needed for top/left positioning */
+    top: 113px;
+    left: 130px;
+    box-sizing: border-box; /* Ensures padding/border are included in width/height */
+
+    /* Typography Properties */
+    font-family: 'Inter', sans-serif; /* Make sure Inter font is linked in your HTML <head> */
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+    color: black; /* Or #000 */
+
+    /* Optional: for demonstration, add a background to see the box */
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    /* border: 1px solid red; */
+
+    /* Align text if needed, though line-height might handle single line */
+    display: flex;
+    align-items: center; /* Vertically center the text within its height */
+    /* If text is longer and wraps, remove align-items: center; or adjust as needed */
+}
+.cart-container {
+  width: 880px;
+  height: 552px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  gap: 20px;
+}
+
+.item-image {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.item-meta {
+  font-size: 13px;
+  color: #666;
+}
+
+.item-meta span {
+  font-weight: 500;
+  color: #111;
+}
+
+.item-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-remove,
+.btn-save {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.btn-remove {
+  background-color: #fff0f0;
+  color: #e60000;
+}
+
+.btn-save {
+  background-color: #f0f7ff;
+  color: #0073e6;
+  border: 1px solid #b3d4fc;
+}
+
+.item-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.item-price strong {
+  font-size: 15px;
+  color: #333;
+}
+
+.qty-selector {
+  padding: 6px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Footer Buttons */
+.cart-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-back {
+  background-color: #127FFF;
+  color: white;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-back i {
+  margin-right: 6px;
+}
+
+.btn-remove-all {
+  background-color: transparent;
+  border: none;
+  color: #0073e6;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+/* --- Main Shopping Cart Wrapper --- */
+/* Container holding cart and coupon */
+.shopping-cart-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Ensures vertical top alignment */
+  padding: 40px 20px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Coupon container adjustments to align properly */
+.coupon-summary-container {
+  margin-top: 0; /* Remove top offset */
+  padding-top: 0; /* Ensure it starts from top */
+  align-self: flex-start; /* Aligns with the top of cart container */
+}
+
+
+/* --- Cart Container (Left) --- */
+.cart-container {
+    flex: 1;
+    max-width: 880px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-of-type {
+    border-bottom: none;
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    object-fit: contain;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 6px;
+    color: #333;
+}
+
+.item-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0 0 8px;
+}
+
+.item-meta span {
+    color: #555;
+    font-weight: 600;
+}
+
+.item-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-remove,
+.btn-save {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 5px 0;
+    transition: color 0.2s ease;
+}
+
+.btn-remove {
+    color: #dc3545;
+}
+
+.btn-save {
+    color: #007bff;
+}
+
+.btn-remove:hover,
+.btn-save:hover {
+    text-decoration: underline;
+}
+
+.item-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.item-price strong {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.qty-selector {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #fff;
+    min-width: 80px;
+    cursor: pointer;
+}
+
+/* --- Bottom Cart Buttons --- */
+.cart-bottom-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    gap: 10px;
+}
+
+.btn-back,
+.btn-remove-all {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+}
+
+.btn-remove-all {
+    background: none;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+.btn-remove-all:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Coupon and Order Summary Section --- */
+.coupon-summary-container {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
+
+
+}
+
+/* --- Coupon Card --- */
+.coupon-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.coupon-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+      margin-top: 0;
+}
+
+.coupon-input-group {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.coupon-input-group input {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border: none;
+    outline: none;
+}
+
+.coupon-input-group input::placeholder {
+    color: #aaa;
+}
+
+.apply-coupon-button {
+    background-color: #e6f2ff;
+    color: #007bff;
+    border: none;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.apply-coupon-button:hover {
+    background-color: #d1e7ff;
+}
+
+/* --- Order Summary Card --- */
+.order-summary-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.summary-item.discount span:last-child {
+    color: #dc3545;
+}
+
+.summary-item.tax span:last-child {
+    color: #28a745;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* --- Checkout Button --- */
+.checkout-button {
+    width: 100%;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.checkout-button:hover {
+    background-color: #218838;
+}
+
+/* --- Payment Methods --- */
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.payment-methods img {
+    height: 24px;
+    opacity: 0.85;
+}
+
+
+/* --- Responsive Adjustments for Main Content --- */
+@media (max-width: 1024px) {
+    .shopping-cart-page-wrapper {
+        flex-direction: column; /* Stack main cart and coupon section vertically */
+        align-items: center; /* Center them horizontally when stacked */
+        gap: 20px; /* Maintain gap between them */
+    }
+    .cart-container {
+        min-width: unset; /* Remove min-width to allow shrinking */
+        width: 95%; /* Adjust width for smaller screens */
+        max-width: 700px; /* Max width for stacked cart */
+    }
+    .coupon-summary-container {
+        width: 95%; /* Adjust width for smaller screens */
+        max-width: 380px; /* Max width for stacked coupon */
+        height: auto; /* Auto height for stacked layout */
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column; /* Stack item details and price/qty vertically */
+        align-items: center; /* Center content when stacked */
+        text-align: center;
+    }
+    .item-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .item-details {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .item-actions {
+        justify-content: center; /* Center the action buttons */
+    }
+    .item-price {
+        align-items: center; /* Center price and quantity when stacked */
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-container {
+        padding: 15px;
+    }
+    .coupon-card, .order-summary-card {
+        padding: 15px;
+    }
+    .btn-back, .btn-remove-all {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+
+.info-icons.aligned-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9fafb;
+  padding: 30px 40px;
+  border-radius: 8px;
+  margin-top: 30px;
+  width: 880px; /* matches cart width */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+.icon-circle {
+  background-color: #e0e4e8;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666a73;
+  font-size: 18px;
+}
+
+.info-text strong {
+  font-size: 14px;
+  color: #2d2d2d;
+}
+
+.info-text p {
+  margin: 0;
+  font-size: 13px;
+  color: #999;
+}
+.saved-for-later {
+  position: absolute;
+  width: 1180px;
+  height: 475px;
+  top: 827px;
+  left: 130px;
+  background: #fff;
+  border: 1px solid #DEE2E7;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.saved-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.saved-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.saved-item {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.saved-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.product-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.move-to-cart {
+  background: #fff;
+  color: #127FFF;
+  border: 1px solid #127FFF;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.move-to-cart i {
+  margin-right: 6px;
+}
+
+.move-to-cart:hover {
+  background: #127FFF;
+  color: white;
+}
+
+
+
+
+
+
+
+/* --- Saved For Later Section --- */
+.saved-for-later-section {
+    padding: 40px 0; /* Adjust vertical padding as needed */
+   
+}
+
+.saved-for-later-section .container {
+    max-width: 1200px; /* Adjust to match your main content width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add horizontal padding */
+    box-sizing: border-box;
+}
+
+.saved-for-later-section .section-title {
+    font-size: 1.5rem; /* Large title as seen in image_6f59d7.png */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px; /* Space below the title */
+}
+
+.saved-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Responsive grid columns */
+    gap: 20px; /* Gap between grid items */
+}
+
+.saved-item-card {
+    background-color: #fff; /* White background for each card */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Internal padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally within the card */
+    text-align: center;
+}
+
+.saved-item-image-wrapper {
+    width: 100%; /* Take full width of card */
+    height: 150px; /* Fixed height for image area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* Space below image */
+    overflow: hidden; /* Hide overflow if image is too large */
+}
+
+.saved-item-thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure image fits without cropping */
+}
+
+.saved-item-price {
+    font-size: 1.25rem; /* Larger price font */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px; /* Space below price */
+}
+
+.saved-item-name {
+    font-size: 0.9rem; /* Smaller text for name */
+    color: #555;
+    margin-bottom: 15px; /* Space below name */
+    line-height: 1.4;
+}
+
+.move-to-cart-button {
+    background-color: #f0f0f0; /* Light grey background */
+    color: #007bff; /* Blue text */
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.move-to-cart-button:hover {
+    background-color: #e6e6e6;
+    color: #0056b3;
+}
+
+.move-to-cart-button i {
+    font-size: 1rem;
+}
+
+/* --- Newsletter Banner Section --- */
+.newsletter-banner-section {
+    background-color: #007bff; /* This is the blue background */
+    padding: 20px 0; /* Vertical padding around the content within the blue banner */
+    margin-top: 40px; /* Space above this section from the previous section */
+    box-sizing: border-box;
+    width: 100%; /* Ensures the blue background stretches full width */
+}
+
+.newsletter-banner-content-wrapper {
+    /* This class uses the global .container properties for max-width, margin: 0 auto; and horizontal padding. */
+    /* If your global .container has padding, that will apply here too. */
+    display: flex;
+    justify-content: space-between; /* Pushes text to left, button to right */
+    align-items: center; /* Vertically centers the text and button within the wrapper */
+    height: 80px; /* This sets the height of the content area within the blue banner */
+    border-radius: 8px; /* Subtle rounded corners for the inner content wrapper */
+    box-sizing: border-box;
+}
+
+.newsletter-text {
+    color: #fff; /* White text for the title and description */
+}
+
+.newsletter-title {
+    font-size: 1.8rem; /* Large font size for the "Super discount..." title */
+    font-weight: 700; /* Bold font weight */
+    margin-bottom: 5px; /* Small space below the title */
+    line-height: 1.2;
+}
+
+.newsletter-description {
+    font-size: 0.9rem; /* Smaller font size for the descriptive text */
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white for a softer look */
+    margin: 0;
+}
+
+.shop-now-button {
+    background-color: #ff8c00; /* This is the bright orange/yellow color for the button */
+    color: #fff; /* White text on the button */
+    border: none;
+    border-radius: 6px; /* Rounded corners for the button */
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Prevents the button from shrinking on smaller screens */
+}
+
+.shop-now-button:hover {
+    background-color: #e07b00; /* A slightly darker orange on hover for feedback */
+}
+
+/* Responsive adjustments for the newsletter banner */
+@media (max-width: 992px) {
+    .newsletter-banner-content-wrapper {
+        flex-direction: column; /* Stack text and button vertically on smaller screens */
+        text-align: center;
+        height: auto; /* Auto height when content is stacked */
+        gap: 15px; /* Space between stacked items */
+        padding: 15px 20px; /* Added vertical padding when stacked for better spacing */
+    }
+    .newsletter-title {
+        font-size: 1.5rem;
+    }
+    .newsletter-description {
+        font-size: 0.85rem;
+    }
+    .shop-now-button {
+        width: 100%; /* Make button full width when stacked */
+        max-width: 200px; /* Limit button max width to prevent it from being too wide */
+    }
+}
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Light grey background for the page */
+    color: #333;
+    /* This ensures body takes full height for positioning */
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Main container for the product detail page content */
+.product-detail-page-wrapper {
+    width: 1180px; /* Exact width as requested */
+    height: 580px; /* Exact height as requested */
+    position: absolute; /* Allows precise positioning using top/left */
+    top: 206px; /* Exact top position as requested */
+    left: 130px; /* Exact left position as requested */
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Soft shadow */
+    display: flex; /* Flexbox for main sections (image, details, sidebar) */
+    padding: 20px; /* Inner padding */
+    box-sizing: border-box; /* Include padding/border in width/height */
+}
+
+/* --- Left Section: Product Image and Thumbnails --- */
+.product-image-section {
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 380px; /* Approximate width for the image section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px; /* Space from the details section */
+}
+
+.main-product-image {
+    width: 350px; /* Slightly smaller than section width to allow padding */
+    height: 350px; /* Maintain aspect ratio */
+    object-fit: contain;
+    border: 1px solid #eee; /* Light border */
+    border-radius: 8px;
+    margin-bottom: 15px; /* Space below main image */
+}
+
+.thumbnail-gallery {
+    display: flex;
+    gap: 10px; /* Space between thumbnails */
+    flex-wrap: wrap; /* Allow thumbnails to wrap */
+    justify-content: center;
+}
+
+.thumbnail-gallery img {
+    width: 60px; /* Thumbnail size */
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.thumbnail-gallery img:hover,
+.thumbnail-gallery img.active {
+    border-color: #007bff; /* Highlight on hover/active */
+}
+
+/* --- Middle Section: Product Details --- */
+.product-details-section {
+    flex-grow: 1; /* Allows it to take up available space */
+    padding-right: 20px; /* Space from the sidebar */
+    border-right: 1px solid #eee; /* Divider line */
+}
+
+.in-stock-status {
+    color: #28a745; /* Green color for "In stock" */
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.in-stock-status::before {
+    content: '\2713'; /* Checkmark symbol */
+    font-size: 0.9em;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.product-rating .stars {
+    color: #ffc107; /* Gold color for stars */
+}
+
+.product-rating .rating-value {
+    font-weight: 600;
+}
+
+.product-meta-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.price-options {
+    display: flex;
+    gap: 15px; /* Space between price boxes */
+    margin-bottom: 20px;
+}
+
+.price-box {
+    border: 1px solid #ccc; /* Border around price boxes */
+    border-radius: 6px;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+.price-box.highlighted {
+    background-color: #ffe0b2; /* Light orange background for highlighted price */
+    border-color: #ff9800; /* Darker orange border */
+}
+
+.price-box .price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.price-box .quantity-range {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.price-negotiable {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.product-specs {
+    margin-bottom: 20px;
+}
+
+.product-specs div {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.product-specs span:first-child {
+    font-weight: 600;
+    width: 80px; /* Align labels */
+    color: #555;
+}
+
+.product-specs span:last-child {
+    color: #777;
+}
+
+.product-features {
+    margin-bottom: 20px;
+}
+
+.product-features h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-features p {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* --- Right Section: Seller Info & Actions --- */
+.seller-info-sidebar {
+    flex-shrink: 0;
+    width: 250px; /* Fixed width for the sidebar */
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.seller-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.seller-avatar {
+    background-color: #e0f2f7; /* Light blue background for avatar */
+    color: #007bff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.seller-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.seller-meta {
+    margin-bottom: 20px;
+}
+
+.seller-meta div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.seller-meta i {
+    color: #888; /* Icon color */
+}
+
+.btn-send-inquiry, .btn-seller-profile, .btn-save-for-later {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none; /* For link-like buttons */
+    display: inline-block; /* For link-like buttons */
+}
+
+.btn-send-inquiry {
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+}
+
+.btn-send-inquiry:hover {
+    background-color: #0056b3;
+}
+
+.btn-seller-profile {
+    background: none;
+    border: 1px solid #007bff; /* Blue border */
+    color: #007bff; /* Blue text */
+}
+
+.btn-seller-profile:hover {
+    background-color: #e6f2ff;
+}
+
+.btn-save-for-later {
+    background: none;
+    border: none;
+    color: #007bff; /* Blue text */
+    font-weight: 600;
+    margin-top: 10px;
+    display: flex; /* To align icon and text */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-save-for-later:hover {
+    text-decoration: underline;
+}
+
+/* Icons for seller meta */
+.fas.fa-globe, .fas.fa-check-circle, .fas.fa-map-marker-alt {
+    color: #666; /* Adjust color if needed */
+}
+
+
+.product-info-tabs-layout {
+    width: 880px; /* Exact width as requested */
+    height: 618px; /* Exact height as requested */
+    position: absolute; /* Allows precise positioning using top/left */
+    top: 806px; /* Exact top position as requested */
+    left: 130px; /* Exact left position as requested */
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Soft shadow */
+    display: flex;
+    flex-direction: column; /* Stack tabs header and content vertically */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+    box-sizing: border-box; /* Include padding/border in width/height */
+}
+
+/* --- Tabs Header --- */
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0; /* Separator line below tabs */
+    padding: 0 20px; /* Horizontal padding for tabs */
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #777; /* Default tab text color */
+    cursor: pointer;
+    transition: color 0.2s ease;
+    position: relative;
+    outline: none; /* Remove focus outline */
+}
+
+.tab-button:hover {
+    color: #333;
+}
+
+.tab-button.active {
+    color: #007bff; /* Active tab text color */
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Active tab underline thickness */
+    background-color: #007bff; /* Active tab underline color */
+}
+
+/* --- Tab Content Area --- */
+.tab-content {
+    flex-grow: 1; /* Allows content to fill remaining vertical space */
+    padding: 20px;
+    overflow-y: auto; /* Add scroll for content if it exceeds height */
+    box-sizing: border-box;
+    /* This class will be toggled by JavaScript. By default, only 'active' content is shown. */
+    display: none;
+}
+
+.tab-content.active {
+    display: block; /* Show the active tab content */
+}
+
+.tab-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* --- Product Specifications Table --- */
+.product-specs-table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse table borders */
+    margin-bottom: 25px;
+}
+
+.product-specs-table tr {
+    border-bottom: 1px solid #eee; /* Light line between rows */
+}
+
+.product-specs-table tr:last-child {
+    border-bottom: none; /* No border for the last row */
+}
+
+.product-specs-table td {
+    padding: 10px 0; /* Padding for table cells */
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.product-specs-table td:first-child {
+    width: 120px; /* Fixed width for the left column (labels) */
+    font-weight: 600;
+    color: #333;
+}
+
+/* --- Feature List --- */
+.feature-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: flex-start; /* Align icon with text top */
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.feature-list li i.fas.fa-check {
+    color: #28a745; /* Green color for checkmark icon */
+    font-size: 1.1rem;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    margin-top: 2px; /* Small adjustment for vertical alignment */
+}
+
+/* --- Responsive Adjustments (Optional, but good practice) --- */
+@media (max-width: 900px) {
+    .product-info-tabs-layout {
+        width: 95%; /* Adjust width for smaller screens */
+        left: 2.5%; /* Center it roughly */
+        position: relative; /* Change from absolute if it needs to flow */
+        top: auto; /* Remove fixed top position */
+        height: auto; /* Allow height to adjust */
+        margin: 20px auto; /* Add some margin for spacing */
+    }
+
+    .tabs-header {
+        flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+        justify-content: center; /* Center tabs when wrapped */
+        padding: 0 10px;
+    }
+
+    .tab-button {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    .tab-content {
+        padding: 15px;
+    }
+
+    .product-specs-table td:first-child {
+        width: 90px; /* Adjust label width for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .product-specs-table td {
+        display: block; /* Stack table cells vertically */
+        width: 100%;
+        text-align: left;
+        padding: 5px 0;
+    }
+    .product-specs-table td:first-child {
+        font-weight: bold;
+        margin-bottom: 5px; /* Space between label and value */
+    }
+    .product-specs-table tr {
+        margin-bottom: 15px; /* Space between stacked rows */
+        display: block;
+        border-bottom: 1px dashed #eee; /* Change border style for clarity */
+        padding-bottom: 10px;
+    }
+    .product-specs-table tr:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+
+
+
+
+.you-may-like-layout {
+    width: 280px; /* Exact width as requested */
+    height: 553px; /* Exact height as requested */
+    position: absolute; /* Allows precise positioning using top/left */
+    top: 806px; /* Exact top position as requested */
+    left: 1030px; /* Exact left position as requested */
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Soft shadow */
+    padding: 20px 15px; /* Inner padding */
+    box-sizing: border-box; /* Include padding/border in width/height */
+    display: flex;
+    flex-direction: column; /* Stack title and product list vertically */
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px; /* Space below title */
+}
+
+.product-list {
+    flex-grow: 1; /* Allows the list to fill available vertical space */
+    overflow-y: auto; /* Add scroll if items exceed height */
+    padding-right: 5px; /* To prevent scrollbar from overlapping content */
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between image and text */
+    margin-bottom: 15px; /* Space between list items */
+    padding-bottom: 15px; /* Padding at bottom for border */
+    border-bottom: 1px solid #eee; /* Separator line between items */
+}
+
+.product-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none; /* No border for the last item */
+}
+
+.product-image {
+    width: 60px; /* Image size */
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.product-details {
+    flex-grow: 1; /* Allows text to take available space */
+}
+
+.product-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: 500;
+}
+
+/* --- Responsive Adjustments (Optional but Recommended) --- */
+@media (max-width: 1200px) {
+    .you-may-like-layout {
+        width: 90%; /* Adjust width for smaller screens */
+        left: 5%; /* Center it roughly */
+        position: relative; /* Change from absolute if it needs to flow with other content */
+        top: auto; /* Remove fixed top position */
+        height: auto; /* Allow height to adjust based on content */
+        margin-top: 20px; /* Add some space if it follows other content */
+    }
+}
+
+@media (max-width: 480px) {
+    .you-may-like-layout {
+        padding: 15px 10px; /* Reduce padding on very small screens */
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .product-item {
+        flex-direction: column; /* Stack image and details on very small screens */
+        text-align: center;
+        gap: 10px;
+    }
+    .product-image {
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+/* Main wrapper for the "Related products" section */
+.related-products-layout {
+    width: 1180px; /* Exact width as requested */
+    height: 350px; /* Exact height as requested */
+    position: absolute; /* Allows precise positioning using top/left */
+    top: 1444px; /* Exact top position as requested */
+    left: 130px; /* Exact left position as requested */
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #e0e0e0; /* Subtle border (border-width: 1px) */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Soft shadow */
+    padding: 20px; /* Inner padding */
+    box-sizing: border-box; /* Include padding/border in width/height */
+    display: flex;
+    flex-direction: column; /* Stack title and product grid vertically */
+    overflow: hidden; /* Ensure content stays within rounded corners, especially if scrolled */
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px; /* Space below title */
+}
+
+.products-grid {
+    display: grid;
+    /* Create 6 columns, each taking equal space, with a minimum width to prevent excessive squeezing */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px; /* Space between product cards */
+    flex-grow: 1; /* Allows the grid to fill remaining vertical space */
+    overflow-x: auto; /* Enable horizontal scroll if items overflow (though with 6, it might wrap) */
+    padding-bottom: 10px; /* Space for potential scrollbar */
+    align-items: start; /* Align items to the top of their grid cell */
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eee; /* Light border for each product card */
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content vertically */
+    align-items: center;
+    flex-shrink: 0; /* Prevent cards from shrinking smaller than content */
+    width: 100%; /* Ensure card takes full grid column width */
+    box-sizing: border-box;
+}
+
+.product-image-wrapper {
+    background-color: #f5f5f5; /* Light grey background for image area */
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 15px; /* Space below image */
+    width: 100%; /* Make wrapper take full width of card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Fixed height for image area to keep cards uniform */
+    box-sizing: border-box;
+}
+
+.product-image {
+    max-width: 80%; /* Limit image width within its wrapper */
+    max-height: 80px; /* Max height to fit within wrapper */
+    object-fit: contain;
+}
+
+.product-info {
+    width: 100%; /* Make info section take full width */
+}
+
+.product-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    /* Limit text to two lines for consistency */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.6em; /* Ensure consistent height for 2 lines */
+}
+
+.product-price {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* --- Responsive Adjustments (Important for grid layouts) --- */
+@media (max-width: 1200px) {
+    .related-products-layout {
+        width: 95%; /* Adjust width for smaller screens */
+        left: 2.5%; /* Center it roughly */
+        position: relative; /* Change from absolute if it needs to flow with other content */
+        top: auto; /* Remove fixed top position */
+        height: auto; /* Allow height to adjust based on content */
+        margin-top: 20px; /* Add some space if it follows other content */
+    }
+
+    .products-grid {
+        /* Adjust column count based on available space */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        overflow-x: hidden; /* Prevent horizontal scroll if items now wrap */
+        padding-bottom: 0;
+    }
+
+    .product-card {
+        padding: 12px;
+    }
+
+    .product-image-wrapper {
+        height: 90px;
+    }
+
+    .product-image {
+        max-height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Further reduce min-width */
+        gap: 10px;
+    }
+
+    .product-name {
+        font-size: 0.85rem;
+    }
+    .product-price {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on very small screens */
+        gap: 10px;
+    }
+    .product-image-wrapper {
+        height: 80px;
+    }
+    .product-image {
+        max-height: 60px;
+    }
+}
+
+
+
+
+/* Main wrapper for the "Super discount" banner */
+.discount-banner-layout {
+    width: 1180px; /* Exact width as requested */
+    height: 120px; /* Exact height as requested */
+    position: absolute; /* Allows precise positioning using top/left */
+    top: 1814px; /* Exact top position as requested */
+    left: 130px; /* Exact left position as requested */
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px 30px; /* Inner padding for content */
+    box-sizing: border-box; /* Include padding in width/height */
+    display: flex;
+    justify-content: space-between; /* Aligns text to left, button to right */
+    align-items: center; /* Vertically centers content */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    overflow: hidden; /* Ensure content stays within rounded corners */
+}
+
+.discount-content {
+    flex-grow: 1; /* Allows content to take up available space */
+    padding-right: 20px; /* Space between text and button */
+}
+
+.discount-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 5px 0; /* Remove default margins, add small bottom margin */
+    line-height: 1.2;
+}
+
+.discount-content p {
+    font-size: 0.9rem;
+    margin: 0; /* Remove default margins */
+    opacity: 0.8; /* Slightly less prominent for descriptive text */
+}
+
+.shop-now-btn {
+    background-color: #ff9800; /* Orange button background */
+    color: #fff; /* White text on button */
+    border: none; /* No border for the button */
+    border-radius: 6px; /* Rounded corners for button */
+    padding: 12px 25px; /* Padding inside the button */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.shop-now-btn:hover {
+    background-color: #e68900; /* Darker orange on hover */
+}
+
+/* --- Responsive Adjustments (Recommended) --- */
+@media (max-width: 1200px) {
+    .discount-banner-layout {
+        width: 95%; /* Adjust width for smaller screens */
+        left: 2.5%; /* Center it roughly */
+        position: relative; /* Change from absolute if it needs to flow with other content */
+        top: auto; /* Remove fixed top position */
+        height: auto; /* Allow height to adjust based on content */
+        margin: 20px auto; /* Add some margin for spacing */
+        flex-direction: column; /* Stack content and button vertically */
+        text-align: center;
+        padding: 20px; /* Adjust padding */
+        gap: 15px; /* Space between stacked content and button */
+    }
+
+    .discount-content {
+        padding-right: 0; /* Remove right padding when stacked */
+    }
+
+    .discount-content h2 {
+        font-size: 1.3rem; /* Adjust font size for smaller screens */
+    }
+
+    .shop-now-btn {
+        width: 80%; /* Make button wider when stacked */
+        max-width: 250px; /* Limit max width for button */
+    }
+}
+
+@media (max-width: 480px) {
+    .discount-banner-layout {
+        padding: 15px; /* Smaller padding on very small screens */
+    }
+
+    .discount-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .discount-content p {
+        font-size: 0.8rem;
+    }
+}
+
+
+.product-card {
+  width: 920px;
+  height: 230px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.product-card img {
+  width: 160px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-details h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.price-row {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.price-row .current {
+  font-weight: bold;
+  color: #000;
+  margin-right: 10px;
+}
+
+.price-row .old {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.meta-row {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.meta-row .stars {
+  color: #f5a623;
+  margin-right: 5px;
+}
+
+.meta-row .rating {
+  color: #f60;
+  margin-right: 6px;
+}
+
+.meta-row .orders {
+  color: #777;
+  margin-right: 6px;
+}
+
+.meta-row .shipping {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.desc {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.view-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  color: #007bff;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 9px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.wishlist-icon:hover {
+  background: #f2f2f2;
+}
+.product-listing-card {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin: 20px auto; /* Center the card for demonstration */
+    max-width: 900px; /* Adjust max-width as needed */
+    gap: 20px; /* Space between image and details */
+    position: relative; /* For positioning the wishlist icon */
+}
+
+.product-image-wrapper {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    width: 160px; /* Fixed width for the image area */
+    height: 160px; /* Fixed height for the image area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the image fits without cropping */
+}
+
+.product-details {
+    flex-grow: 1; /* Allow product details to take up remaining space */
+    display: flex;
+    flex-direction: column;
+    /* Adjust as needed for specific alignment within the details block */
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.price-info {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.current-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+
+.old-price {
+    font-size: 16px;
+    color: #888;
+    text-decoration: line-through;
+}
+
+.rating-info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 8px; /* Space between rating elements */
+}
+
+.rating-info .stars {
+    color: #ffc107; /* Star color */
+    font-size: 16px; /* Size of star icons */
+    display: inline-flex; /* Keep stars together */
+    gap: 2px; /* Small gap between individual stars */
+}
+
+.rating-info .rating-value {
+    font-weight: 600;
+    color: #333;
+}
+
+.rating-info .orders-count {
+    color: #888;
+    /* Add a dot separator if desired */
+    /* &::before { content: "• "; color: #ccc; } */
+}
+
+.rating-info .shipping-info {
+    color: #28a745; /* Green for Free Shipping */
+    font-weight: 500;
+}
+
+.product-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-height: 3.5em; /* Approximately 2 lines based on line-height */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+
+.view-details-link {
+    font-size: 15px;
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.view-details-link:hover {
+    color: #005bb5;
+    text-decoration: underline;
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #a7a7a7; /* Default grey color */
+    transition: color 0.2s ease;
+}
+
+.wishlist-icon:hover {
+    color: #ff6347; /* Red on hover, or your preferred hover color */
+}
+
+/* Styles for the heart SVG */
+.wishlist-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+
+
+
+.main-container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%; /* Equal height */
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #222;
+}
+
+.product-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.product-card .old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.product-card .rating {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+}
+
+.product-card .free-shipping {
+  color: green;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.product-card a {
+  color: #1a4cd4;
+  text-decoration: none;
+  font-size: 14px;
+}
