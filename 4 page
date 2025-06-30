@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page - My Ecommerce Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="brand-logo">
+                <i class="fas fa-box"></i>
+                <span>Brand</span>
+            </div>
+
+            <div class="search-bar-container">
+                <div class="search-input-group">
+                    <input type="text" placeholder="Search" class="search-input">
+                    <select class="search-category-select">
+                        <option value="">All category</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="home">Home</option>
+                        <option value="apparel">Apparel</option>
+                    </select>
+                    <button class="search-button">Search</button>
+                </div>
+            </div>
+
+            <div class="user-actions">
+                <div class="action-item">
+                    <i class="far fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="action-item">
+                    <i class="far fa-comment-dots"></i>
+                    <span>Message</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-box-open"></i>
+                    <span>Orders</span>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>My cart</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="secondary-nav">
+        <div class="container secondary-nav-container">
+            <div class="nav-links">
+                <a href="#" class="nav-link"><i class="fas fa-bars"></i> All category</a>
+                <a href="#" class="nav-link">Hot offers</a>
+                <a href="#" class="nav-link">Gift Boxes</a>
+                <a href="#" class="nav-link">Projects</a>
+                <a href="#" class="nav-link">Menu item <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="nav-link">Help <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="locale-options">
+                <a href="#" class="nav-link">English, USD <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="nav-link">Ship to <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAACWCAMAAADABGUuAAAACVBMVEUAAADdAAD/zgDGIigcAAAAjUlEQVR4nO3PAREAMAgAIbV/6OXYPTRgBgAAAAAAAAAAAAAA4AubpV6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqReVK5flnqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6Ubj+AEA8kn2JMPKKAAAAAElFTkSuQmCC" alt="German Flag" class="flag-icon"> <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </nav>
+      <nav class="breadcrumb-nav">
+        <div class="container breadcrumb-container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><i class="fas fa-chevron-right"></i> <a href="#">Clothings</a></li>
+                <li class="breadcrumb-item"><i class="fas fa-chevron-right"></i> <a href="#">Men's wear</a></li>
+                <li class="breadcrumb-item"><i class="fas fa-chevron-right"></i> <span class="current-page">Summer clothing</span></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+     <div class="product-detail-page-wrapper">
+
+        <div class="product-image-section">
+            <img src="https://outfitters.com.pk/cdn/shop/files/F0668103002.jpg?v=1750242365" alt="Mens Long Sleeve T-shirt Grey" class="main-product-image">
+
+            <div class="thumbnail-gallery">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0668103002.jpg?v=1750242365" alt="Thumbnail 1" class="active">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0668103002_5_copy2.jpg?v=1750242365" alt="Thumbnail 2">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F066810300201.jpg?v=1750242365" alt="Thumbnail 3">
+                <img src="data:image/jpeg;base64,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" alt="Thumbnail 4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWojkD2nRcIP7-d4EClfLSZI2SEnqAQT3f7TBLvr3SJ1VKmZtfUJF1i01VoaKFDQ9ZOTw&usqp=CAU" alt="Thumbnail 5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwmBpU1icMzUQGliqj3wymDcVTVe9ByBv-FQ&s" alt="Thumbnail 6">
+            </div>
+        </div>
+
+        <div class="product-details-section">
+            <div class="in-stock-status">In stock</div>
+            <h1 class="product-title">Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h1>
+            
+            <div class="product-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-value">9.3</span>
+                <span>• 32 reviews</span>
+                <span>• 154 sold</span>
+            </div>
+
+            <div class="price-options">
+                <div class="price-box highlighted">
+                    <div class="price">$98.00</div>
+                    <div class="quantity-range">50-100 pcs</div>
+                </div>
+                <div class="price-box">
+                    <div class="price">$90.00</div>
+                    <div class="quantity-range">100-700 pcs</div>
+                </div>
+                <div class="price-box">
+                    <div class="price">$78.00</div>
+                    <div class="quantity-range">700+ pcs</div>
+                </div>
+            </div>
+
+            <p class="price-negotiable">Price: Negotiable</p>
+
+            <div class="product-specs">
+                <div><span>Type:</span><span>Classic shoes</span></div>
+                <div><span>Material:</span><span>Plastic material</span></div>
+                <div><span>Design:</span><span>Modern nice</span></div>
+            </div>
+
+            <div class="product-features">
+                <h5>Customization:</h5>
+                <p>Customized logo and design custom packages</p>
+            </div>
+
+            <div class="product-features">
+                <h5>Protection:</h5>
+                <p>Refund Policy</p>
+            </div>
+
+            <div class="product-features">
+                <h5>Warranty:</h5>
+                <p>2 years full warranty</p>
+            </div>
+        </div>
+
+        <aside class="seller-info-sidebar">
+            <div class="seller-header">
+                <div class="seller-avatar">R</div>
+                <div>
+                    <div class="seller-name">Supplier</div>
+                    <div>Guanjoi Trading LLC</div>
+                </div>
+            </div>
+
+            <div class="seller-meta">
+                <div><i class="fas fa-map-marker-alt"></i> Germany, Berlin</div>
+                <div><i class="fas fa-check-circle"></i> Verified Seller</div>
+                <div><i class="fas fa-globe"></i> Worldwide shipping</div>
+            </div>
+
+            <a href="#" class="btn-send-inquiry">Send inquiry</a>
+            <a href="#" class="btn-seller-profile">Seller's profile</a>
+
+            <a href="#" class="btn-save-for-later"><i class="far fa-heart"></i> Save for later</a>
+        </aside>
+
+    </div>
+
+    <div class="product-info-tabs-layout">
+
+        <div class="tabs-header">
+            <button class="tab-button active">Description</button>
+            <button class="tab-button">Reviews</button>
+            <button class="tab-button">Shipping</button>
+            <button class="tab-button">About seller</button>
+        </div>
+
+        <div class="tab-content active">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+            <table class="product-specs-table">
+                <tr>
+                    <td>Model</td>
+                    <td>#8786867</td>
+                </tr>
+                <tr>
+                    <td>Style</td>
+                    <td>Classic style</td>
+                </tr>
+                <tr>
+                    <td>Certificate</td>
+                    <td>ISO-898921212</td>
+                </tr>
+                <tr>
+                    <td>Size</td>
+                    <td>34mm x 450mm x 19mm</td>
+                </tr>
+                <tr>
+                    <td>Memory</td>
+                    <td>36GB RAM</td>
+                </tr>
+            </table>
+
+            <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Some great feature name here</li>
+                <li><i class="fas fa-check"></i> Lorem ipsum dolor sit amet, consectetur</li>
+                <li><i class="fas fa-check"></i> Duis aute irure dolor in reprehenderit</li>
+                <li><i class="fas fa-check"></i> Some great feature name here</li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="reviews-content" style="display: none;">
+            <p>Content for the Reviews tab.</p>
+        </div>
+        <div class="tab-content" id="shipping-content" style="display: none;">
+            <p>Content for the Shipping tab.</p>
+        </div>
+        <div class="tab-content" id="about-seller-content" style="display: none;">
+            <p>Content for the About seller tab.</p>
+        </div>
+
+    </div>
+      <div class="you-may-like-layout">
+        <h3 class="section-title">You may like</h3>
+
+        <div class="product-list">
+            <div class="product-item">
+                <img src="bluecoat.png" alt="Men Blazers Sets Elegant Formal" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">Men Blazers Sets Elegant Formal</div>
+                    <div class="product-price">$7.00 - $99.50</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <img src="blueshirt.png" alt="Men Shirt Sleeve Polo Contrast" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">Men Shirt Sleeve Polo Contrast</div>
+                    <div class="product-price">$7.00 - $99.50</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <img src="brownjacket.png" alt="Apple Watch Series Space Gray" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">Apple Watch Series Space Gray</div>
+                    <div class="product-price">$7.00 - $99.50</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <img src="bluewallet.png" alt="Basketball Crew Socks Long Stuff" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">Basketball Crew Socks Long Stuff</div>
+                    <div class="product-price">$7.00 - $99.50</div>
+                </div>
+            </div>
+
+            <div class="product-item">
+                <img src="bluebag.png" alt="New Summer Men's castrol T-Shirts" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">New Summer Men's castrol T-Shirts</div>
+                    <div class="product-price">$7.00 - $99.50</div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="related-products-layout">
+        <h3 class="section-title">Related products</h3>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="bluewallet.png" alt="Xiaomi Redmi 8 Original Wallet" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Xiaomi Redmi 8 Original</div>
+                    <div class="product-price">$32.00-$40.00</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="watch.png" alt="Xiaomi Redmi 8 Original Smartwatch" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Xiaomi Redmi 8 Original</div>
+                    <div class="product-price">$32.00-$40.00</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="headphones.png" alt="Xiaomi Redmi 8 Original Headphones" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Xiaomi Redmi 8 Original</div>
+                    <div class="product-price">$32.00-$40.00</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="bluejeans.png" alt="Xiaomi Redmi 8 Original Jeans Shorts" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Xiaomi Redmi 8 Original</div>
+                    <div class="product-price">$32.00-$40.00</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="pot.png" alt="Xiaomi Redmi 8 Original Kettle" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Xiaomi Redmi 8 Original</div>
+                    <div class="product-price">$32.00-$40.00</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="data:image/jpeg;base64,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" alt="Xiaomi Redmi 8 Original Magazine Rack" class="product-image">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Xiaomi Redmi 8 Original</div>
+                    <div class="product-price">$32.00-$40.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <div class="discount-banner-layout">
+        <div class="discount-content">
+            <h2>Super discount on more than 100 USD</h2>
+            <p>Have you ever finally just write dummy info</p>
+        </div>
+        <button class="shop-now-btn">Shop now</button>
+    </div>
+  
+            
+
+         
+
+          
+
+      
+   </body>
+</html>
