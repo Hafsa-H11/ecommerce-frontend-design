@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container header-container">
+        <div class="brand-logo">
+            <i class="fas fa-box"></i> <span>Brand</span>
+        </div>
+
+        <div class="search-bar-container">
+            <div class="search-input-group">
+                <input type="text" placeholder="Search" class="search-input">
+                <select class="search-category-select">
+                    <option value="">All category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="home">Home</option>
+                </select>
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="user-actions">
+            <div class="action-item">
+                <i class="far fa-user"></i>
+                <span>Profile</span>
+            </div>
+            <div class="action-item">
+                <i class="far fa-comment-dots"></i>
+                <span>Message</span>
+            </div>
+            <div class="action-item">
+                <i class="fas fa-box-open"></i>
+                <span>Orders</span>
+            </div>
+           <a href="5pg.html" class="action-link">
+  <div class="action-item"> 
+    <i class="fas fa-shopping-cart"></i>
+    <span>My cart</span>
+  </div>
+</a>
+        </div>
+    </div>
+</header>
+
+<nav class="secondary-nav">
+    <div class="container secondary-nav-container">
+        <div class="nav-links">
+            <a href="1pg.html" class="nav-link"><i class="fas fa-bars"></i> All category</a>
+            <a href="#" class="nav-link">Hot offers</a>
+            <a href="#" class="nav-link">Gift Boxes</a>
+            <a href="#" class="nav-link">Projects</a>
+            <a href="#" class="nav-link">Menu item <i class="fas fa-chevron-down"></i></a>
+            <a href="#" class="nav-link">Help <i class="fas fa-chevron-down"></i></a>
+        </div>
+        <div class="locale-options">
+            <a href="#" class="nav-link">English, USD <i class="fas fa-chevron-down"></i></a>
+           <a href="#" class="nav-link">Ship to <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAD1BMVEUAAAD+zgDeAADoAAD/1wEwWYkWAAAA+ElEQVR4nO3QMQGAMAAEsS/gXzMSbuuUSMgGAAAAAAAAAAAAAAAAAAAAwEUvYQ9BUVKUFCVFSVFSlBQlRUlRUpQUJUVJUVKUFCVFSVFSlBQlRUlRUpQUJUVJUVKUFCVFSVFSlBQlRUlRUpQUJUVJUVKUFCVFSVFSlBQlRUlRUpQUJUVJUVKUFCVFSVFSlBQlRWkfYYegKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSovQDb47JpXSBiCUAAAAASUVORK5CYII=" alt="German Flag" class="flag-icon"> <i class="fas fa-chevron-down"></i></a>  </div>
+    </div>
+</nav>
+   
+        
+
+    <section class="hero-area">
+        <div class="hero-wrapper">
+            <div class="hero-section">
+                <aside class="category-menu">
+                    <ul>
+                        <li class="active">Automobiles</li>
+                        <li>Clothes and wear</li>
+                        <li>Home interiors</li>
+                        <li>Computer and tech</li>
+                        <li>Tools, equipments</li>
+                        <li>Sports and outdoor</li>
+                        <li>Animal and pets</li>
+                        <li>Machinery tools</li>
+                        <li>More category</li>
+                        </ul>
+                </aside>
+
+                <div class="hero-banner">
+                    <img class="banner-bg" src="Banner-board.png" alt="Banner Background" />
+                    <div class="banner-content">
+                        <p>Latest trending</p>
+                        <h2>Electronic items</h2>
+                        <button>Learn more</button>
+                    </div>
+                </div>
+
+                <div class="right-cards">
+                    <div class="welcome-card">
+                        <div class="welcome-content">
+                            <span class="user-icon">👤</span>
+                            <p>Hi, user<br>Let's get started</p>
+                        </div>
+                        <div class="welcome-buttons">
+                            <button class="btn-primary">Join now</button>
+                            <button class="btn-outline">Log in</button>
+                        </div>
+                    </div>
+
+                    <div class="promo-card orange">
+                        Get US $10 off<br />with a new supplier
+                    </div>
+
+                    <div class="supplier-card blue">
+                        Send quotes<br />with supplier preferences
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="deals-offers-section">
+    <div class="container">
+        <div class="deals-offers-grid">
+            <div class="deals-countdown-card">
+                <h3>Deals and offers</h3>
+                <p>Hygiene equipments</p>
+                <div class="countdown-timer">
+                    <div class="timer-block">
+                        <span class="value">04</span>
+                        <span class="label">Days</span>
+                    </div>
+                    <div class="timer-block">
+                        <span class="value">13</span>
+                        <span class="label">Hour</span>
+                    </div>
+                    <div class="timer-block">
+                        <span class="value">34</span>
+                        <span class="label">Min</span>
+                    </div>
+                    <div class="timer-block">
+                        <span class="value">56</span>
+                        <span class="label">Sec</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deals-product-cards">
+                <div class="product-card">
+                    <img src="watch.png" alt="Smart watches">
+                    <p class="product-name">Smart watches</p>
+                    <span class="discount">-25%</span>
+                </div>
+                <div class="product-card">
+                    <img src="laptop.png" alt="Laptops">
+                    <p class="product-name">Laptops</p>
+                    <span class="discount">-15%</span>
+                </div>
+                <div class="product-card">
+                    <img src="gopro.png" alt="GoPro cameras">
+                    <p class="product-name">GoPro cameras</p>
+                    <span class="discount">-40%</span>
+                </div>
+                <div class="product-card">
+                    <img src="headphones.png" alt="Headphones">
+                    <p class="product-name">Headphones</p>
+                    <span class="discount">-25%</span>
+                </div>
+                <div class="product-card">
+                    <img src="canoncam.png" alt="Canon cameras">
+                    <p class="product-name">Canon cameras</p>
+                    <span class="discount">-25%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="home-outdoor-section">
+    <div class="container">
+        <div class="home-outdoor-grid">
+            <div class="home-outdoor-banner">
+                <h3>Home and outdoor</h3>
+                <button>Source now</button>
+            </div>
+
+            <div class="home-outdoor-products">
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Soft chairs</p>
+                        <p class="price">From <span class="usd">USD 19</span></p>
+                    </div>
+                    <img src="sofa.png" alt="Soft chairs">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Sofa & chair</p>
+                        <p class="price">From <span class="usd">USD 19</span></p>
+                    </div>
+                    <img src="sofaandchair.png" alt="Sofa & chair">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Kitchen dishes</p>
+                        <p class="price">From <span class="usd">USD 19</span></p>
+                    </div>
+                    <img src="kitchendishes.png" alt="Kitchen dishes">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Smart watches</p>
+                        <p class="price">From <span class="usd">USD 19</span></p>
+                    </div>
+                    <img src="pot.png" alt="Smart watches">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Kitchen mixer</p>
+                        <p class="price">From <span class="usd">USD 100</span></p>
+                    </div>
+                    <img src="kitchenmixer.png" alt="Kitchen mixer">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Blenders</p>
+                        <p class="price">From <span class="usd">USD 39</span></p>
+                    </div>
+                    <img src="blender.png" alt="Blenders">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Home appliance</p>
+                        <p class="price">From <span class="usd">USD 19</span></p>
+                    </div>
+                    <img src="homeappliances.png" alt="Home appliance">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Coffee maker</p>
+                        <p class="price">From <span class="usd">USD 10</span></p>
+                    </div>
+                    <img src="coffeemaker.png" alt="Coffee maker">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+<section class="consumer-electronics-section">
+    <div class="container">
+        <div class="consumer-electronics-grid">
+            <div class="consumer-electronics-banner">
+                <h3>Consumer electronics and gadgets</h3>
+                <button>Source now</button>
+            </div>
+
+            <div class="consumer-electronics-products">
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Smart watches</p>
+                        <p class="price">From <span class="usd">USD 19</span></p>
+                    </div>
+                    <img src="watch.png" alt="Smart watches">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Cameras</p>
+                        <p class="price">From <span class="usd">USD 89</span></p>
+                    </div>
+                    <img src="camera.jpg" alt="Cameras">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Headphones</p>
+                        <p class="price">From <span class="usd">USD 10</span></p>
+                    </div>
+                    <img src="whiteheadphone.png" alt="Headphones">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Smart watches</p>
+                        <p class="price">From <span class="usd">USD 90</span></p>
+                    </div>
+                    <img src="blackcup.png" alt="Smart watches (Kettle)">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Gaming set</p>
+                        <p class="price">From <span class="usd">USD 35</span></p>
+                    </div>
+                    <img src="headphones.png" alt="Gaming set">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Laptops & PC</p>
+                        <p class="price">From <span class="usd">USD 340</span></p>
+                    </div>
+                    <img src="laptop.png" alt="Laptops & PC">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Smartphones</p>
+                        <p class="price">From <span class="usd">USD 19</span></p>
+                    </div>
+                    <img src="mobile.png" alt="Smartphones">
+                </div>
+                <div class="category-item">
+                    <div class="text-content">
+                        <p class="title">Electric kettle</p>
+                        <p class="price">From <span class="usd">USD 240</span></p>
+                    </div>
+                    <img src="redphone.png" alt="Electric kettle">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="supplier-request-section">
+    <div class="container">
+        <div class="supplier-request-content">
+            <div class="request-text-block">
+                <h2>An easy way to send requests to all suppliers</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+
+            <div class="inquiry-form-card">
+                <h4>Send quote to suppliers</h4>
+                <div class="form-group">
+                    <input type="text" placeholder="What item you need?" />
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Type more details"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group quantity-input">
+                        <input type="number" placeholder="Quantity" value="1" min="1" />
+                    </div>
+                    <div class="form-group unit-select">
+                        <select>
+                            <option>Pcs</option>
+                            <option>Kg</option>
+                            <option>Meters</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn-send-inquiry">Send inquiry</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="recommended-items-section">
+    <div class="container">
+        <h3 class="section-title">Recommended items</h3>
+        <div class="recommended-items-grid">
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="blueshirt.png" alt="T-shirt">
+                </div>
+                <div class="product-info">
+                    <p class="price">$10.30</p>
+                    <p class="description">T-shirts with multiple colors, for men</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="brownjacket.png" alt="Jeans shorts">
+                </div>
+                <div class="product-info">
+                    <p class="price">$10.30</p>
+                    <p class="description">Jeans shorts for men blue color</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="bluecoat.png" alt="Brown winter coat">
+                </div>
+                <div class="product-info">
+                    <p class="price">$12.50</p>
+                    <p class="description">Brown winter coat medium size</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="bluewallet.png" alt="Jeans bag">
+                </div>
+                <div class="product-info">
+                    <p class="price">$34.00</p>
+                    <p class="description">Jeans bag for travel for men</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="bluebag.png" alt="Leather wallet">
+                </div>
+                <div class="product-info">
+                    <p class="price">$99.00</p>
+                    <p class="description">Leather wallet</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="bluejeans.png" alt="Canon camera">
+                </div>
+                <div class="product-info">
+                    <p class="price">$9.99</p>
+                    <p class="description">Canon camera black, 100x zoom</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="whiteheadphone.png" alt="Headset">
+                </div>
+                <div class="product-info">
+                    <p class="price">$8.99</p>
+                    <p class="description">Headset for gaming with mic</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="bluebag.png" alt="Smartwatch">
+                </div>
+                <div class="product-info">
+                    <p class="price">$10.30</p>
+                    <p class="description">Smartwatch silver color modern</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="pot.png" alt="Blue wallet">
+                </div>
+                <div class="product-info">
+                    <p class="price">$10.30</p>
+                    <p class="description">Blue wallet for men leather metarfial</p>
+                </div>
+            </div>
+            <div class="recommended-item-card">
+                <div class="image-wrapper">
+                    <img src="blackcup.png" alt="Jeans bag">
+                </div>
+                <div class="product-info">
+                    <p class="price">$80.95</p>
+                    <p class="description">Jeans bag for travel for men</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="extra-services-section">
+    <div class="container">
+        <h3 class="section-title">Our extra services</h3>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image-wrapper">
+                    <img src="boxbg.png" alt="Source from Industry Hubs">
+                    <div class="service-icon"><i class="fas fa-search"></i></div>
+                </div>
+                <p class="service-title">Source from Industry Hubs</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image-wrapper">
+                    <img src="colourbg.png" alt="Customize Your Products">
+                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                </div>
+                <p class="service-title">Customize Your Products</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image-wrapper">
+                    <img src="aerobg.png" alt="Fast, reliable shipping">
+                    <div class="service-icon"><i class="fas fa-paper-plane"></i></div>
+                </div>
+                <p class="service-title">Fast, reliable shipping by ocean or air</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image-wrapper">
+                    <img src="manbg.png" alt="Product monitoring">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                </div>
+                <p class="service-title">Product monitoring and inspection</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="suppliers-by-region-section">
+  <div class="container">
+    <h3 class="section-title">Suppliers by region</h3>
+
+    <div class="region-grid">
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/ae.png" alt="UAE Flag">
+        <div class="region-info">
+          <p class="region-name">Arabic Emirates</p>
+          <p class="shop-name">shopname.ae</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/au.png" alt="Australia Flag">
+        <div class="region-info">
+          <p class="region-name">Australia</p>
+          <p class="shop-name">shopname.au</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/us.png" alt="US Flag">
+        <div class="region-info">
+          <p class="region-name">United States</p>
+          <p class="shop-name">shopname.us</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag">
+        <div class="region-info">
+          <p class="region-name">Russia</p>
+          <p class="shop-name">shopname.ru</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/it.png" alt="Italy Flag">
+        <div class="region-info">
+          <p class="region-name">Italy</p>
+          <p class="shop-name">shopname.it</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/dk.png" alt="Denmark Flag">
+        <div class="region-info">
+          <p class="region-name">Denmark</p>
+          <p class="shop-name">denmark.dk</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/fr.png" alt="France Flag">
+        <div class="region-info">
+          <p class="region-name">France</p>
+          <p class="shop-name">shopname.fr</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/ae.png" alt="UAE Flag">
+        <div class="region-info">
+          <p class="region-name">Arabic Emirates</p>
+          <p class="shop-name">shopname.ae</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/cn.png" alt="China Flag">
+        <div class="region-info">
+          <p class="region-name">China</p>
+          <p class="shop-name">shopname.cn</p>
+        </div>
+      </div>
+
+      <div class="region-item">
+        <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag">
+        <div class="region-info">
+          <p class="region-name">Great Britain</p>
+          <p class="shop-name">shopname.co.uk</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="newsletter-section">
+    <div class="container newsletter-container">
+        <h2 class="newsletter-title">Subscribe on our newsletter</h2>
+        <p class="newsletter-description">Get daily news on upcoming offers from many suppliers all over the world</p>
+
+        <div class="subscribe-form-wrapper">
+            <div class="subscribe-input-group">
+                <i class="far fa-envelope email-icon"></i> <input type="email" placeholder="Email" class="email-input">
+                <button class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="main-footer">
+    <div class="container footer-top">
+        <div class="footer-col brand-info">
+            <div class="brand-logo">
+                <i class="fas fa-box"></i>
+                <span>Brand</span>
+            </div>
+            <p class="brand-description">Best information about the company gies here but now lorem ipsum is</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">About</h4>
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Find store</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Blogs</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">Partnership</h4>
+            <ul class="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Find store</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Blogs</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">Information</h4>
+            <ul class="footer-links">
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Money Refund</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 class="footer-heading">For users</h4>
+            <ul class="footer-links">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">My Orders</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col get-app">
+            <h4 class="footer-heading">Get app</h4>
+            <a href="#" class="app-store-link">
+                <img src="data:image/png;base64,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" alt="Download on the App Store">
+            </a>
+            <a href="#" class="google-play-link">
+                <img src="data:image/png;base64,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" alt="Get it on Google Play">
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container footer-bottom-container">
+            <p>&copy; 2023 Ecommerce.</p>
+            <div class="locale-selector">
+                <img src="data:image/png;base64,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" alt="US Flag" class="flag-icon">
+                <span>English</span>
+                <i class="fas fa-chevron-up"></i> </div>
+        </div>
+    </div>
+</footer>
